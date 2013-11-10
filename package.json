@@ -1,0 +1,15 @@
+{
+  "name": "director",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "coffee -c public/javascripts/*.coffee routes/*.coffee *.coffee",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "stylus": "*",
+    "socket.io": "*"
+  }
+}

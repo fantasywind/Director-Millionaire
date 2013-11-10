@@ -1,0 +1,5 @@
+routes/*.js
+public/javascripts/*.js
+public/stylesheets/*css
+node_modules
+./*.js
