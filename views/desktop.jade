@@ -1,13 +1,9 @@
-!!!
-head
-  title Directed
-  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js")
-  script(src="/socket.io/socket.io.js")
-  link(rel='stylesheet', href='stylesheets/style.css')
-body
-  div#container
-    div#screen
-      video#main.source(width='100%', height='100%')
-    div#source-list
-      video#self.source
-  script(src='javascripts/desktop2.js')
+div#desktop
+  div#screen
+    video#main(width='100%', height='100%', autoplay)
+  div#source-list
+    div.source-container(ng-repeat='video in videos')
+      video.source(autoplay, ng-click='activeVideo(video, $event)', ng-class="video.active === true ? 'active' : ''")
+      p.on-live
+        span.red-dot ●
+        span LIVE

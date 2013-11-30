@@ -1,0 +1,13 @@
+!!!
+html(ng-app='director')
+  head
+    title Directed
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js")
+    script(src="/socket.io/socket.io.js")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div#container
+      h1 Director
+      div(ng-view)
+script(src='/javascripts/desktop.js')
