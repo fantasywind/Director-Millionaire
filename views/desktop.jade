@@ -3,7 +3,8 @@ div#desktop
     video#main(width='100%', height='100%', autoplay)
   div#source-list
     div.source-container(ng-repeat='video in videos')
-      video.source(autoplay, ng-click='activeVideo(video, $event)', ng-class="video.active === true ? 'active' : ''")
+      video.source(data-source-id='{{video.sourceId}}', autoplay, ng-click='activeVideo(video, $event)', ng-class="video.active === true ? 'active' : ''")
       p.on-live
         span.red-dot ●
         span LIVE
+  video#test(width='100px', height='80px')

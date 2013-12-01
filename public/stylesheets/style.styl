@@ -51,11 +51,13 @@ html, body
   border 1px solid #555
   .red-dot
     color #e74c3c
+#source-links, #viewer-links
+  margin-bottom 24pt
 .source-container
   display inline-block
   margin 0 18px
   position relative
-.source-link
+.source-link, .viewer-link
   padding 6pt 10pt
   border 1px solid #2c3e50
   background-color #34495e
@@ -64,3 +66,8 @@ html, body
   cursor pointer
   &:hover
     background-color darken(#34495e, 20%)
+.viewer-link
+  border-color #16a085
+  background-color #1abc9c
+  &:hover
+    background-color darken(#1abc9c, 20%)

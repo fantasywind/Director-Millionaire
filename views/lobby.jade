@@ -2,9 +2,15 @@ div#lobby
   h2 您可以立即建立一個頻道
   div.msg(ng-show="errorMsg !== ''") {{errorMsg}}
   button#create-desktop(type='button', ng-click='makeDesktop()') 建立頻道
-  h3 Or
+  hr
   h2 成為 Source 的一員
   div#source-links
     - for (var i = 0, l = desktops.length; i < l; i += 1) {
       a.source-link(href='/s/#{desktops[i]}') #{desktops[i]}
+    - }
+  hr
+  h2 觀看直播
+  div#viewer-links
+    - for (var i = 0, l = desktops.length; i < l; i += 1) {
+      a.viewer-link(href='/v/#{desktops[i]}') #{desktops[i]}
     - }
