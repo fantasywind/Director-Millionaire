@@ -1,4 +1,22 @@
 div#viewer
-  h2 Channel: {{desktopId}}
   div#viewer-container
-    video#viewer-box(width='100%', height='100%', autoplay)
+    video#viewer-box(width='1024', height='768', autoplay)
+    div#timer-container
+      span.timer 59
+    div#overlay-container
+      div.question
+        h3 歌曲《darshan do ghanshyam》 是由哪位著名印度詩人作詞的?
+      div.answers
+        div.answer
+          span.option-mark A
+          p.option 蘇達斯
+        div.answer
+          span.option-mark C
+          p.option 米勒拜
+      div.answers
+        div.answer
+          span.option-mark C
+          p.option 妥切達斯
+        div.answer
+          span.option-mark D
+          p.option 戈彼

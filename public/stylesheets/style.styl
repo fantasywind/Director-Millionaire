@@ -71,3 +71,61 @@ html, body
   background-color #1abc9c
   &:hover
     background-color darken(#1abc9c, 20%)
+#viewer-container
+  position relative
+  background-color #E7E7E7
+#timer-container
+  position absolute
+  top 18px
+  right -26px
+  color #FAFAFA
+  text-shadow 5px 5px 0 #3e3e3e
+  font-size 72pt
+#overlay-container
+  position absolute
+  bottom 18px
+  left 140px
+  width 700px
+  padding 10px
+  background-color #EFEFEF
+  border 2px solid #555
+  box-shadow 2px 2px 10px #777
+  .question
+    background-color #404a50
+    padding 6px 24px
+    h3
+      color #FAFAFA
+      font-weight normal
+      margin 14px 0
+    .helper
+      color #CCC
+      margin-top 8px
+      font-family sans-serif
+  .answers
+    display block
+    padding 10px 0 0 0
+    margin 0
+    &:first-child
+      padding-bottom 0
+    .option-mark, .answer
+      display inline-block
+    .answer
+      position relative
+      padding-left 52px
+      background-color #99BFBF
+      width 293px
+      color #222
+      font-size 15pt
+      &:first-child
+        margin-right 10px
+    .option-mark
+      position absolute
+      left 16px
+      top 9px
+      font-size 22pt
+      color #E57040
+    .option
+      margin 13px 0
+    .helper
+      color #BCEBEB
+      margin 8px 0 12px 0
