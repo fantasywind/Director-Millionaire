@@ -88,6 +88,7 @@ director.controller 'viewer', ['$scope', '$routeParams', '$location', ($scope, $
     if peerViewer? and activedStream?
       activedStream.stop()
       peerViewer.removeStream activedStream
+      peerViewer.close()
       peerViewer = null
     setTimeout ->
       createViewerOffer $scope.desktopId, $scope
@@ -130,6 +131,9 @@ director.controller 'desktop', ['$scope', '$routeParams', '$location', ($scope, 
     document.getElementById('main').src = e.srcElement.src
 
     activedStream = sourceStreams[video.sourceId]
+    for viewer in viewers
+      viewer.removeStream activedStream
+      viewer.close()
     viewers = []
 
     socket.emit 'changeSource',
