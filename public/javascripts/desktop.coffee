@@ -10,6 +10,8 @@ rs = (length)->
 # WebRTC
 peers = []
 viewers = []
+peerViewer = null
+peerSource = null
 dataChannel = null
 sourceStreams = {}
 iceServers =
@@ -43,7 +45,7 @@ setChannelEvents = (channel, channelNameForConsoleOutput)->
     # channel.send 'first text message over RTP data ports'
 
   channel.onclose = (e)->
-    console.error e
+    console.debug 'Close Connection: ' + channelNameForConsoleOutput
 
   channel.onerror = (e)->
     console.error e
@@ -132,8 +134,8 @@ director.controller 'desktop', ['$scope', '$routeParams', '$location', ($scope, 
 
     activedStream = sourceStreams[video.sourceId]
     for viewer in viewers
-      viewer.removeStream activedStream
-      viewer.close()
+      viewer.obj.removeStream activedStream
+      viewer.obj.close()
     viewers = []
 
     socket.emit 'changeSource',
@@ -310,7 +312,6 @@ createViewerAnswer = (offerSDP, desktopId, $scope, viewerId)->
   , null, mediaConstraints
 
 # 建立發送者
-peerSource = null
 createOffer = (stream, desktopId, $scope)->
   peerSource = new RTCPeerConnection iceServers, optionalRtpDataChannels
 
@@ -344,7 +345,6 @@ createOffer = (stream, desktopId, $scope)->
 
 
 # 建立發送者
-peerViewer = null
 createViewerOffer = (desktopId, $scope)->
   peerViewer = new RTCPeerConnection iceServers, optionalRtpDataChannels
 
